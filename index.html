@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GS1 Digital Link cURL Tool</title>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<div id="header" class="perimeter">GS1 Digital Link Command Line Request Builder</div>
+	<div id="div2" class="perimeter">&copy; RalphTro | Version 0.1.0 | Last update: 2024-05-31</div>
+	<div id="div3" class="textfield">Enter GTIN (in 14-digit format):</div>
+	<div id="div4" class="textfield">Enter resolver domain (https://.../): </div>
+	<input type="text" id="gtininput" class="inputfield" value="09506000134376">
+	<input type="text" id="resolverinput" class="inputfield" value="https://id.gs1.org/">
+	<div id="div10">A simplified tool to generate cURL requests for querying GS1-compliant resolvers </div>
+	<div id="div17" class="queryBackground">
+		<div id="div18">Generic queries</div>
+		<div id="linkset" class="button">Get linkset</div>
+		<div id="default" class="button">Get default link</div>
+	</div>
+	<div id="checkbox">
+		<form>
+			<input type="checkbox" id="revocation" name="revocation" checked>
+			<label for="revocation">SSL Certificate Revocation Check</label>
+		</form>
+	</div>
+	<div id="curl">The command line request is generated when clicking on one of the above buttons.</div>
+	<div id="div20" class="queryBackground">
+	<div id="div21">Specific query</div>
+		<select id="language" class="selection" >
+			<option selected disabled hidden>Preferred Language</option>
+			<option value="en">English</option>
+			<option value="de">German</option>
+			<option value="es">Spanish</option>
+			<option value="ja">Japanese</option>
+		</select>
+		<select id="mimetype" class="selection" >
+			<option selected disabled hidden>Preferred Format</option>
+			<option value="text/html">Website</option>
+			<option value="application/json">JSON</option>
+			<option value="application/ld+json">JSON-LD</option>
+			<option value="application/xml">XML</option>
+			<option value="image/jpeg">JPG</option>
+			<option value="image/png">PNG</option>
+			<option value="image/svg+xml">SVG</option>
+		</select>
+		<select id="linktype" class="selection" >
+			<option selected disabled hidden>Desired Link Type</option>
+			<option value="gs1:defaultLink">Default link</option>
+			<option value="gs1:masterData">Master data</option>
+			<option value="gs1:pip">Product information page</option>
+			<option value="gs1:promotion">Promotion</option>
+			<option value="gs1:recallStatus">Recall status</option>
+			<option value="gs1:relatedImage">Related image</option>
+			<option value="gs1:relatedVideo">Related video</option>
+			<option value="gs1:registryEntry">Registry entry</option>
+			<option value="gs1:quickStartGuide">Quick start guide</option>
+			<option value="gs1:sustainabilityInfo">Sustainability and recycling information</option>
+		</select>
+		<div id="specific" class="button">Get specific link</div>
+	</div>
+	<div id="clipboard" class="button">Copy to clipboard
+		<div id="clipboardnote">Successfully copied! </div>
+	</div>
+
+		<div id="gtinhint" class="hinttext">The value of the GTIN must be 14 digits.</div>
+	<div id="urlhint" class="hinttext">The URL must start with "http(s)" and end with a trailing slash ("/").</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
