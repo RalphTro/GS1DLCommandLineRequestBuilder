@@ -81,8 +81,19 @@ function copyToClipboard(value) {
 	let textToCopy = $("#curl").html();
 	navigator.clipboard.writeText(textToCopy)
 		.then(() => {
-			$('#clipboardnote').show();
-			$('#clipboardnote').fadeOut(3000);
+			$('#clipboardnote').show().fadeOut(3000);
+			$("#buttonText").css({
+				'font-size': '1.1vw',
+                'position': 'relative',
+                'top': '-5px'       
+            });
+			setTimeout(() => {
+                $("#buttonText").css({
+                    'font-size': '', 
+                    'top': ''        
+                });
+            }, 3000);
+
 		});
 };
 
