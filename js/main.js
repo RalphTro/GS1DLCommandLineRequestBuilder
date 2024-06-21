@@ -117,6 +117,7 @@ function addLinkType() {
 
 let curlParams = "";
 function addCurlParams() {
+	curlParams = "";
 	if ($('#mimetype').val() != null) {
 		curlParams += '-H "Accept: ' + $('#mimetype').val() + '"';
 	};
